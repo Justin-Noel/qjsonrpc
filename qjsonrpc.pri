@@ -1,3 +1,5 @@
+include (../../global.pri)
+
 QJSONRPC_VERSION = 1.1.0
 
 isEmpty(QJSONRPC_LIBRARY_TYPE) {
@@ -11,7 +13,7 @@ private-headers {
 
 QT += network
 QJSONRPC_INCLUDEPATH = $${PWD}/src
-QJSONRPC_LIBS = -lqjsonrpc
+QJSONRPC_LIBS = -L$$builddir/lib -lqjsonrpc
 contains(QJSONRPC_LIBRARY_TYPE, staticlib) {
     DEFINES += QJSONRPC_STATIC
 } else {

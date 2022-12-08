@@ -1,5 +1,6 @@
 include(../qjsonrpc.pri)
 include(http-parser/http-parser.pri)
+include (../../../global.pri)
 
 INCLUDEPATH += .
 TEMPLATE = lib
@@ -81,3 +82,4 @@ equals(QJSONRPC_LIBRARY_TYPE, staticlib) {
 }
 unix:QMAKE_CLEAN += -r pkgconfig lib$${TARGET}.prl
 
+DESTDIR = $$builddir/lib
